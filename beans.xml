@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd">
+	 
+<bean id="dataServiceObj" class="com.seleniumexpress.spring.di.DataService"></bean>
+<bean id="missedCallObj" class="com.seleniumexpress.spring.di.MissCallService"></bean>
+<bean id="helloTuneObj" class="com.seleniumexpress.spring.di.HelloTuneService"></bean>
+<bean id="voiceCallObj" class="com.seleniumexpress.spring.di.VoiceCallService"></bean>
+
+<bean id="airtel" class="com.seleniumexpress.spring.di.Airtel">
+ <constructor-arg ref="missedCallObj"/>
+ <!-- <property name="service" ref="dataServiceObj"/> -->
+</bean>
+</beans>
